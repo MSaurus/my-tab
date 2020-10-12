@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-size: 16px;
+  background-color: #efefef;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (33.3vh)[3];
+      grid-template-rows: repeat(3, 33.3vh);
+}
+
+.container .user-name {
+  font-size: 3em;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.container .settings {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  padding: 1em;
+}
+
+.container .weather {
+  -ms-grid-column: 3;
+  grid-column: 3;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  padding: 1em;
+  -ms-grid-column-align: right;
+      justify-self: right;
+}
+
+.container .todo-list {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2/4;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  padding: 1em;
+}
+
+.container .todo-list .todo-list-card {
+  background-color: #fff;
+  width: auto;
+  padding: 1px 0 0 40px;
+  border-radius: 2em;
+  -webkit-box-shadow: #d6d6d6 3px 5px;
+          box-shadow: #d6d6d6 3px 5px;
+}
+
+.container .todo-list .todo-list-card ul {
+  margin: 0;
+  padding: 0;
+}
+
+.container .todo-list .todo-list-card ul li {
+  list-style: none;
+  padding: 12px 8px 12px 40px;
+  font-size: 18px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+/*# sourceMappingURL=index.css.map */
