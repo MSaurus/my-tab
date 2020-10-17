@@ -1,5 +1,6 @@
 
-function createTodo(){
+
+let createTodo = () => {
   event.preventDefault();
   let elementId = id();
   let todo = document.createElement("div");
@@ -20,10 +21,10 @@ function createTodo(){
   list.appendChild(todo);
 }
 
-function handleTodo(toRemove){
+let handleTodo = (toRemove) => {
   toRemove.remove();
 }
 
-function id () {
+let id = () => {
   return '_' + Math.random().toString(36).substr(2, 9);
-};
+}
