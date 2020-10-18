@@ -12,7 +12,7 @@ New-tab was created from the frustration of not finding a new tab extension for 
 ## Goal
 As mentioned previously we want to improve the everyday workflow, want an easy reminder? Create a todo and see it everytime you open a new tab. Want to have easy access to your favorite websites? Have them all collected in one place. Just want some information about the weather before you go and get lunch? Have the weather widget to see if you need to bring a jacket or not.
 
-The goal to implment as many widgets as we can and make them customizable.
+The goal to implement as many widgets as we can and make them customizable.
 
 - [ ] Todolist
 - [ ] Username greeting
