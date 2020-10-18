@@ -2,9 +2,9 @@
 // so that we can use anywhere, will be used for pretty much everything
 let storage = window.localStorage;
 
-let createTodo = () => {
+let createTodo = event => {
   // prevent reload
-  event.preventDefault(); // VScode says that event is deprecated but nothing else works...
+  event.preventDefault(); 
   
   // creates a unique id that will be used later to remove the elemnt when the todo is done
   let elementId = id();
