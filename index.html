@@ -6,6 +6,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="css/index.css">
+    <link rel
 </head>
 <body>
 	<div class="container">
@@ -29,16 +30,14 @@
                 <div class="header">
                     <h2>Todo List</h2>
                 </div>
-    
-                <ul>
-                    <li>Todo 1</li>
-                    <li>Todo 2</li>
-                    <li>Todo 3</li>
-                    <li>Todo 4</li>
-                    <li>Todo 5</li>
-                </ul>
+                <form id="todoForm">
+                    <input id="todoText" type="text" placeholder="Feed the dog">
+                    <input type="submit" value="Create new TODO">
+                </form>
+                <div id="todoList"></div>
             </div>
         </div>
     </div>
+    <script src="./js/main.js"></script> 
 </body>
 </html>
