@@ -21,10 +21,10 @@ let handleTodo = (toRemove) => {
   storage.removeItem(toRemove.id);
 }
 
-// Instead of onclick in html, add event listener to the from when submitting
+// Instead of onclick in html, add event listener to the form when submitting
 document.getElementById("todoForm").addEventListener('submit', createTodo)
 
-// this should be good, because the user will probably no creae that many tasks
+// this should be good, because the user will probably no create that many tasks
 let id = () => {
   return '_' + Math.random().toString(36).substr(2, 9);
 }
