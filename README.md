@@ -2,7 +2,7 @@
 The name "new-tab" **is temporary**.
 
 ## What is new-tab
-new-tab aims to be the optimal new tab extension for chrome and firefox (maybe even edge 👀). new-tab wants to give full control to the user, what widgets should be used, where they should be placed and creating their own theme. new-tab will not launch will the full package on day one, we will launch it with the most barebone features and iterative new versios based on feedback from our users.
+new-tab aims to be the optimal new tab extension for chrome and firefox (maybe even edge 👀). new-tab wants to give full control to the user, what widgets should be used, where they should be placed and creating their own theme. new-tab will not launch with the full package on day one, we will launch it with the most barebone features and iterative new version based on feedback from our users.
 
 New tab want to help our users in their everyday life by just making it a little bit easier.
 
