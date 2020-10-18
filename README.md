@@ -22,7 +22,7 @@ The goal to implment as many widgets as we can and make them customizable.
 - [ ] Inspirational quote
 - [ ] Drag-and-drop widgets
 
-*(These are not in a specfic order)*
+*(These are not in a specific order)*
 
 ## Feedback
 Feedback is super important to us!!!
