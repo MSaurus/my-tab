@@ -3,6 +3,13 @@ let storage = window.localStorage;
 
 document.addEventListener("DOMContentLoaded", function() {
   loadTodos();
+
+  if (isUsernameSet()) {
+    loadUsername()
+  } else {
+    let usernameElement = document.querySelector(".user-name")
+    usernameElement.textContent = "Hello"
+  }
 });
 
 let loadTodos = () => {
@@ -11,6 +18,16 @@ let loadTodos = () => {
     let todoText = storage.getItem(elementId);
     createTodoElement(elementId, todoText);
   }
+}
+
+let isUsernameSet = () => {
+  return storage.getItem("username") ? true : false
+}
+
+let loadUsername = () => {
+  let usernameElement = document.querySelector(".user-name")
+  let usernameInStorage = storage.getItem("username")
+  usernameElement.textContent = `Hello ${usernameInStorage}`
 }
 
 let createTodo = event => {
