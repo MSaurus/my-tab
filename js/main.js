@@ -2,6 +2,18 @@
 // so that we can use anywhere, will be used for pretty much everything
 let storage = window.localStorage;
 
+document.addEventListener("DOMContentLoaded", function() {
+  loadLocalstorage();
+});
+
+let loadLocalstorage = () => {
+  for(let i = 0; i < storage.length; i++){
+    let elementId = storage.key(i);
+    let todoText = storage.getItem(elementId);
+    createTodoElement(elementId, todoText);
+  }
+}
+
 let createTodo = event => {
   // prevent reload
   event.preventDefault(); 
@@ -29,18 +41,6 @@ let id = () => {
   return '_' + Math.random().toString(36).substr(2, 9);
 }
 
-
-document.addEventListener("DOMContentLoaded", function() {
-  loadLocalstorage();
-});
-
-let loadLocalstorage = () => {
-  for(let i = 0; i < storage.length; i++){
-    let elementId = storage.key(i);
-    let todoText = storage.getItem(elementId);
-    createTodoElement(elementId, todoText);
-  }
-}
 
 /*
   creates a div with a unique id
