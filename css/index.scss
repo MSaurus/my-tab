@@ -11,12 +11,20 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 33.3vh);
 
-    .user-name {
-        font-size: 3em;
+    .username {
+        font-size: 2em;
         grid-column: 2;
         grid-row: 2;
         align-self: center;
         justify-self: center;
+
+        h1 {
+            margin: 0;
+        }
+
+        input {
+            width: 50%;
+        }
     }
 
     .settings {
