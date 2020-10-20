@@ -13,10 +13,21 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 let loadTodos = () => {
-  for(let i = 0; i < storage.length; i++){
-    let elementId = storage.key(i);
-    let todoText = storage.getItem(elementId);
-    createTodoElement(elementId, todoText);
+  let todos = []
+  /* get all the items and remove the ones
+  ** that are not todos
+  */ 
+  for(let i = 0; i < storage.length; i++) {
+    if(storage.key(i).substr(0, 1) == '_') {
+      todos.push(storage.key(i))
+    }
+  }
+  
+  // load the todos and only the todos
+  for(let i = 0; i < todos.length; i++) {
+    let elementId = todos[i]
+    let todoText = storage.getItem(elementId)
+    createTodoElement(elementId, todoText)
   }
 }
 
