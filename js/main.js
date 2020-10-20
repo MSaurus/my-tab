@@ -1,12 +1,11 @@
-
 // so that we can use anywhere, will be used for pretty much everything
 let storage = window.localStorage;
 
 document.addEventListener("DOMContentLoaded", function() {
-  loadLocalstorage();
+  loadTodos();
 });
 
-let loadLocalstorage = () => {
+let loadTodos = () => {
   for(let i = 0; i < storage.length; i++){
     let elementId = storage.key(i);
     let todoText = storage.getItem(elementId);
