@@ -1,5 +1,6 @@
 // so that we can use anywhere, will be used for pretty much everything
 let storage = window.localStorage;
+let usernameForm = document.querySelector("#usernameForm")
 
 document.addEventListener("DOMContentLoaded", function() {
   loadTodos();
@@ -8,7 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
     loadUsername()
   } else {
     let usernameElement = document.querySelector(".username h1 span")
-    usernameElement.textContent = "User"
+    usernameElement.textContent = "CHANGE ME"
+    usernameForm.removeAttribute("hidden")
   }
 });
 
@@ -18,7 +20,7 @@ let loadTodos = () => {
   ** that are not todos
   */ 
   for(let i = 0; i < storage.length; i++) {
-    if(storage.key(i).substr(0, 1) == '_') {
+    if(storage.key(i).substr(0, 1) === '_') {
       todos.push(storage.key(i))
     }
   }
@@ -93,8 +95,6 @@ let createTodoElement = (elementId, todoText) => {
   list.appendChild(todo);
 }
 
-let usernameForm = document.querySelector("#usernameForm")
-
 /* fires when you press enter on the input
 ** it gets the name you put in, saves it
 ** in localstorage and the change the name
@@ -103,7 +103,7 @@ let usernameForm = document.querySelector("#usernameForm")
 let setUsername = event => {
   event.preventDefault()
   let newUsernameInput = document.querySelector("#newUsername")
-  if (newUsername.value != "") {
+  if (newUsername.value !== "") {
     storage.setItem("username", newUsername.value)
     let usernameElement = document.querySelector(".username h1 span")
     usernameElement.textContent = `${newUsername.value}`
