@@ -108,9 +108,9 @@ let setUsername = event => {
     let usernameElement = document.querySelector(".username h1 span")
     usernameElement.textContent = `${newUsername.value}`
     newUsernameInput.value = ""
-    usernameForm.setAttribute("hidden", "true")
+    usernameForm.setAttribute("hidden", "")
   } else {
-    usernameForm.setAttribute("hidden", "true")
+    usernameForm.setAttribute("hidden", "")
   }
 }
 
