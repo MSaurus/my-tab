@@ -22,7 +22,7 @@ let handleTodo = (toRemove) => {
 }
 
 // Instead of onclick in html, add event listener to the form when submitting
-document.getElementById("todoForm").addEventListener('submit', createTodo)
+document.getElementById("todoForm").addEventListener('submit', createTodo);
 
 // this should be good, because the user will probably no create that many tasks
 let id = () => {
