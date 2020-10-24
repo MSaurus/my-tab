@@ -22,16 +22,17 @@ let handleTodo = (toRemove) => {
 }
 
 // Instead of onclick in html, add event listener to the form when submitting
-document.getElementById("todoForm").addEventListener('submit', createTodo)
+document.getElementById("todoForm").addEventListener('submit', createTodo);
 
 // this should be good, because the user will probably no create that many tasks
 let id = () => {
   return '_' + Math.random().toString(36).substr(2, 9);
 }
 
-
+// Everything that should be loaded when user opebs the tab 
 document.addEventListener("DOMContentLoaded", function() {
   loadLocalstorage();
+  showTime();
 });
 
 let loadLocalstorage = () => {
@@ -65,3 +66,25 @@ let createTodoElement = (elementId, todoText) => {
   let list = document.getElementById("todoList");
   list.appendChild(todo);
 }
+
+
+let showTime = () => {
+  let date = new Date();
+  let h = date.getHours(); // 0 - 23
+  let m = date.getMinutes(); // 0 - 59
+  let s = date.getSeconds(); // 0 - 59
+
+  
+  h = (h < 10) ? "0" + h : h;
+  m = (m < 10) ? "0" + m : m;
+  s = (s < 10) ? "0" + s : s;
+  
+  let time = h + ":" + m + ":" + s;
+  document.getElementById("clock").innerText = time;
+  document.getElementById("clock").textContent = time;
+  
+  setTimeout(showTime,0);
+  
+}
+
+
