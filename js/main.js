@@ -108,14 +108,11 @@ let setUsername = event => {
     let usernameElement = document.querySelector(".username h1 span")
     usernameElement.textContent = `${newUsername.value}`
     newUsernameInput.value = ""
-    usernameForm.setAttribute("hidden", "")
-  } else {
-    usernameForm.setAttribute("hidden", "")
   }
+  usernameForm.setAttribute("hidden", "")
 }
 
 usernameForm.addEventListener("submit", setUsername)
-
 
 let showInputField = () => {
   usernameForm.removeAttribute("hidden")
