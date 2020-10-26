@@ -4,6 +4,7 @@ let usernameForm = document.querySelector("#usernameForm")
 
 document.addEventListener("DOMContentLoaded", function() {
   loadTodos();
+  showTime();
 
   if (isUsernameSet()) {
     loadUsername()
@@ -70,20 +71,6 @@ let id = () => {
   return '_' + Math.random().toString(36).substr(2, 9);
 }
 
-
-// Everything that should be loaded when user opens the tab 
-document.addEventListener("DOMContentLoaded", function() {
-  loadLocalstorage();
-  showTime();
-});
-
-let loadLocalstorage = () => {
-  for(let i = 0; i < storage.length; i++){
-    let elementId = storage.key(i);
-    let todoText = storage.getItem(elementId);
-    createTodoElement(elementId, todoText);
-  }
-}
 
 /*
   creates a div with a unique id
