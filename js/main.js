@@ -1,6 +1,47 @@
-
 // so that we can use anywhere, will be used for pretty much everything
 let storage = window.localStorage;
+let usernameForm = document.querySelector("#usernameForm")
+
+document.addEventListener("DOMContentLoaded", function() {
+  loadTodos();
+
+  if (isUsernameSet()) {
+    loadUsername()
+  } else {
+    let usernameElement = document.querySelector(".username h1 span")
+    usernameElement.textContent = "CHANGE ME"
+    usernameForm.removeAttribute("hidden")
+  }
+});
+
+let loadTodos = () => {
+  let todos = []
+  /* get all the items and remove the ones
+  ** that are not todos
+  */ 
+  for(let i = 0; i < storage.length; i++) {
+    if(storage.key(i).substr(0, 1) === '_') {
+      todos.push(storage.key(i))
+    }
+  }
+  
+  // load the todos and only the todos
+  for(let i = 0; i < todos.length; i++) {
+    let elementId = todos[i]
+    let todoText = storage.getItem(elementId)
+    createTodoElement(elementId, todoText)
+  }
+}
+
+let isUsernameSet = () => {
+  return storage.getItem("username") ? true : false
+}
+
+let loadUsername = () => {
+  let usernameElement = document.querySelector(".username h1 span")
+  let usernameInStorage = storage.getItem("username")
+  usernameElement.textContent = `${usernameInStorage}`
+}
 
 let createTodo = event => {
   // prevent reload
@@ -30,18 +71,6 @@ let id = () => {
 }
 
 
-document.addEventListener("DOMContentLoaded", function() {
-  loadLocalstorage();
-});
-
-let loadLocalstorage = () => {
-  for(let i = 0; i < storage.length; i++){
-    let elementId = storage.key(i);
-    let todoText = storage.getItem(elementId);
-    createTodoElement(elementId, todoText);
-  }
-}
-
 /*
   creates a div with a unique id
   add the text from the input field
@@ -65,3 +94,29 @@ let createTodoElement = (elementId, todoText) => {
   let list = document.getElementById("todoList");
   list.appendChild(todo);
 }
+
+/* fires when you press enter on the input
+** it gets the name you put in, saves it
+** in localstorage and the change the name
+** on screen
+*/
+let setUsername = event => {
+  event.preventDefault()
+  let newUsernameInput = document.querySelector("#newUsername")
+  if (newUsername.value !== "") {
+    storage.setItem("username", newUsername.value)
+    let usernameElement = document.querySelector(".username h1 span")
+    usernameElement.textContent = `${newUsername.value}`
+    newUsernameInput.value = ""
+  }
+  usernameForm.setAttribute("hidden", "")
+}
+
+usernameForm.addEventListener("submit", setUsername)
+
+let showInputField = () => {
+  usernameForm.removeAttribute("hidden")
+}
+
+let nameElement = document.querySelector(".username h1 span")
+nameElement.addEventListener("dblclick", showInputField)
