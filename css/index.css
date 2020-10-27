@@ -2,7 +2,126 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
+  width: 100vw;
   font-size: 16px;
   background-color: #3c40c6;
   color: white;
+  font-family: Helvetica, sans-serif;
 }
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  margin: 15px;
+}
+
+.right {
+  background-color: red;
+}
+
+.mid {
+  background-color: green;
+}
+
+.left, .mid, .right {
+  width: 33%;
+}
+
+.todo-list {
+  margin-bottom: 100px;
+}
+
+#todoForm {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  margin: 15px;
+}
+
+.todo {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #575fcf;
+  border-radius: 5px;
+  width: 50%;
+  -webkit-box-shadow: 5px 5px #1e272e;
+          box-shadow: 5px 5px #1e272e;
+}
+
+.todo-text {
+  margin-left: 15px;
+}
+
+button {
+  background-color: white;
+  color: black;
+  padding: 13px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #ccc;
+}
+
+input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+input[type=submit] {
+  background-color: white;
+  color: black;
+  padding: 13px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #ccc;
+}
+
+input[type=button] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/*# sourceMappingURL=index.css.map */
