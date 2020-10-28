@@ -83,11 +83,11 @@ let createTodoElement = (elementId, todoText) => {
   todo.setAttribute("id", elementId);
   todo.setAttribute("class", "todo")
 
-  let para = document.createElement("p");
+  let todoParagraph = document.createElement("p");
   let text = document.createTextNode(todoText);
-  para.appendChild(text);
+  todoParagraph.appendChild(text);
 
-  para.setAttribute("class", "todo-text")
+  todoParagraph.setAttribute("class", "todo-text")
 
   let button = document.createElement("button");
   button.setAttribute("onclick", "handleTodo("+elementId+")");
