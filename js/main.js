@@ -95,7 +95,7 @@ let createTodoElement = (elementId, todoText) => {
   let buttonText = document.createTextNode("Complete");
   button.appendChild(buttonText);
 
-  todo.appendChild(para);
+  todo.appendChild(todoParagraph);
   todo.appendChild(button);
 
   let list = document.getElementById("todoList");
