@@ -43,14 +43,14 @@ body {
   margin-bottom: 100px;
 }
 
-#todoForm {
+.todo-list #todoForm {
   position: fixed;
   bottom: 0px;
   left: 0px;
   margin: 15px;
 }
 
-.todo {
+.todo-list .todo {
   margin-bottom: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -66,11 +66,11 @@ body {
           box-shadow: 5px 5px #1e272e;
 }
 
-.todo-title {
+.todo-list .todo-title {
   text-shadow: 4px 4px #1e272e;
 }
 
-.todo-text {
+.todo-list .todo-text {
   margin-left: 15px;
 }
 

@@ -1,27 +1,27 @@
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100vw;
-    font-size: 16px;
-    background-color: #3c40c6;
-    color: white;
-    font-family: Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  font-size: 16px;
+  background-color: #3c40c6;
+  color: white;
+  font-family: Helvetica, sans-serif;
 }
 
 .container{
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: row;
+  justify-content: space-between;
 
 }
 
 .left{
-    display: flex;
-    flex-direction: column-reverse;
-    margin: 15px;
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 15px;
 }
 
 .left, .mid, .right{
@@ -30,31 +30,32 @@ body {
 
 .todo-list{
   margin-bottom: 100px;
-}
 
-#todoForm{
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  margin: 15px;
-}
+  #todoForm{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    margin: 15px;
+  }
 
-.todo{
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  background-color: #575fcf;
-  border-radius: 5px;
-  width: 50%;
-  box-shadow: 5px 5px #1e272e;
-}
+  .todo{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #575fcf;
+    border-radius: 5px;
+    width: 50%;
+    box-shadow: 5px 5px #1e272e;
+  }
 
-.todo-title{
-  text-shadow: 4px 4px #1e272e;
-}
+  .todo-title{
+    text-shadow: 4px 4px #1e272e;
+  }
 
-.todo-text{
-  margin-left: 15px;
+  .todo-text{
+    margin-left: 15px;
+  }
+  
 }
 
 button{
