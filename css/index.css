@@ -35,14 +35,6 @@ body {
   margin: 15px;
 }
 
-.right {
-  background-color: red;
-}
-
-.mid {
-  background-color: green;
-}
-
 .left, .mid, .right {
   width: 33%;
 }
@@ -72,6 +64,10 @@ body {
   width: 50%;
   -webkit-box-shadow: 5px 5px #1e272e;
           box-shadow: 5px 5px #1e272e;
+}
+
+.todo-title {
+  text-shadow: 4px 4px #1e272e;
 }
 
 .todo-text {
@@ -123,5 +119,44 @@ input[type=button] {
   border-radius: 5px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.mid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#clock {
+  font-size: 10em;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+.username {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 /*# sourceMappingURL=index.css.map */

@@ -24,38 +24,33 @@ body {
     margin: 15px;
 }
 
-.right{
-  background-color: red;
-}
-
-.mid{
-  background-color: green;
-}
-
-
 .left, .mid, .right{
   width:33%;
 }
 
 .todo-list{
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 #todoForm{
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    margin: 15px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  margin: 15px;
 }
 
 .todo{
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    background-color: #575fcf;
-    border-radius: 5px;
-    width: 50%;
-    box-shadow: 5px 5px #1e272e;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: #575fcf;
+  border-radius: 5px;
+  width: 50%;
+  box-shadow: 5px 5px #1e272e;
+}
+
+.todo-title{
+  text-shadow: 4px 4px #1e272e;
 }
 
 .todo-text{
@@ -107,4 +102,26 @@ input[type=text] {
     border-radius: 5px;
     box-sizing: border-box;
   }
+
+.mid{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
   
+#clock{
+  font-size: 10em;
+  font-weight: bold;
+}
+
+h1{
+  font-size: 2.5em;
+}
+
+.username{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
