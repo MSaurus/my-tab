@@ -80,6 +80,7 @@ button {
   padding: 13px 20px;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 button:hover {
@@ -100,18 +101,11 @@ input[type=submit]:hover {
   background-color: #ccc;
 }
 
-input[type=text], input[type=button] {
+input[type=text] {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-input[type=button] {
-  width: 100%;
   border-radius: 5px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
