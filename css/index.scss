@@ -1,70 +1,120 @@
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    font-size: 16px;
-    background-color: #efefef;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  font-size: 16px;
+  background-color: #3c40c6;
+  color: white;
+  font-family: Helvetica, sans-serif;
 }
 
-.container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 33.3vh);
+.container{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: row;
+  justify-content: space-between;
 
-    .username {
-        font-size: 2em;
-        grid-column: 2;
-        grid-row: 2;
-        justify-self: center;
+}
 
-        h1 {
-            margin: 0;
-        }
+.left{
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 15px;
+}
 
-        input {
-            width: 50%;
-        }
-    }
+.left, .mid, .right{
+  width:33%;
+}
 
-    .settings {
-        grid-column: 1;
-        grid-row: 1;
-        padding: 1em;
-    }
+// Below is used mainly for the left column
+.todo-list{
+  margin-bottom: 100px;
 
-    .weather {
-        grid-column: 3;
-        grid-row: 1;
-        padding: 1em;
-        justify-self: right;
-    }
+  #todoForm{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    margin: 15px;
+  }
 
-    .todo-list {
-        grid-column: 1;
-        grid-row: 2/4;
-        align-self: end;
-        padding: 1em;
+  .todo{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #575fcf;
+    border-radius: 5px;
+    width: 50%;
+    box-shadow: 5px 5px #1e272e;
+  }
 
-        .todo-list-card {
-            background-color: #fff;
-            width: auto;
-            padding: 1px 0 0 40px;
-            border-radius: 2em;
-            box-shadow: #d6d6d6 3px 5px;
-    
-            ul {
-                margin: 0;
-                padding: 0;
-    
-                li {
-                    list-style: none;
-                    padding: 12px 8px 12px 40px;
-                    font-size: 18px;
-                    user-select: none;
-                }
-            }
-        }
+  .todo-title{
+    text-shadow: 4px 4px #1e272e;
+  }
 
-        
-    }
+  .todo-text{
+    margin-left: 15px;
+  }
+  
+}
+
+button{
+  background-color: white;
+  color: black;
+  padding: 13px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover{
+    background-color: #ccc;
+  }
+}
+  
+input[type=submit] {
+  background-color: white;
+  color: black;
+  padding: 13px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover{
+    background-color: #ccc;
+  }  
+}
+
+input[type=text]{
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+// Below is used mainly for the mid column
+.mid{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+  
+#clock{
+  font-size: 10em;
+  font-weight: bold;
+}
+
+h1{
+  font-size: 2.5em;
+}
+
+.username{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }

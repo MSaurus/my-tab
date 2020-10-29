@@ -81,15 +81,21 @@ let createTodoElement = (elementId, todoText) => {
 
   let todo = document.createElement("div");
   todo.setAttribute("id", elementId);
+  todo.setAttribute("class", "todo")
 
+  let todoParagraph = document.createElement("p");
   let text = document.createTextNode(todoText);
+  todoParagraph.appendChild(text);
+
+  todoParagraph.setAttribute("class", "todo-text")
+
   let button = document.createElement("button");
   button.setAttribute("onclick", "handleTodo("+elementId+")");
 
-  let buttonText = document.createTextNode("remove todo");
+  let buttonText = document.createTextNode("Complete");
   button.appendChild(buttonText);
 
-  todo.appendChild(text);
+  todo.appendChild(todoParagraph);
   todo.appendChild(button);
 
   let list = document.getElementById("todoList");

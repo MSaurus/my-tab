@@ -2,88 +2,151 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
+  width: 100vw;
   font-size: 16px;
-  background-color: #efefef;
+  background-color: #3c40c6;
+  color: white;
+  font-family: Helvetica, sans-serif;
 }
 
 .container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (33.3vh)[3];
-      grid-template-rows: repeat(3, 33.3vh);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.container .username {
-  font-size: 2em;
-  -ms-grid-column: 2;
-  grid-column: 2;
-  -ms-grid-row: 2;
-  grid-row: 2;
-  -ms-grid-column-align: center;
-      justify-self: center;
+.left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  margin: 15px;
 }
 
-.container .username h1 {
-  margin: 0;
+.left, .mid, .right {
+  width: 33%;
 }
 
-.container .username input {
+.todo-list {
+  margin-bottom: 100px;
+}
+
+.todo-list #todoForm {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  margin: 15px;
+}
+
+.todo-list .todo {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #575fcf;
+  border-radius: 5px;
   width: 50%;
+  -webkit-box-shadow: 5px 5px #1e272e;
+          box-shadow: 5px 5px #1e272e;
 }
 
-.container .settings {
-  -ms-grid-column: 1;
-  grid-column: 1;
-  -ms-grid-row: 1;
-  grid-row: 1;
-  padding: 1em;
+.todo-list .todo-title {
+  text-shadow: 4px 4px #1e272e;
 }
 
-.container .weather {
-  -ms-grid-column: 3;
-  grid-column: 3;
-  -ms-grid-row: 1;
-  grid-row: 1;
-  padding: 1em;
-  -ms-grid-column-align: right;
-      justify-self: right;
+.todo-list .todo-text {
+  margin-left: 15px;
 }
 
-.container .todo-list {
-  -ms-grid-column: 1;
-  grid-column: 1;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 2;
-  grid-row: 2/4;
-  -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
-  padding: 1em;
+button {
+  background-color: white;
+  color: black;
+  padding: 13px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.container .todo-list .todo-list-card {
-  background-color: #fff;
-  width: auto;
-  padding: 1px 0 0 40px;
-  border-radius: 2em;
-  -webkit-box-shadow: #d6d6d6 3px 5px;
-          box-shadow: #d6d6d6 3px 5px;
+button:hover {
+  background-color: #ccc;
 }
 
-.container .todo-list .todo-list-card ul {
-  margin: 0;
-  padding: 0;
+input[type=submit] {
+  background-color: white;
+  color: black;
+  padding: 13px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.container .todo-list .todo-list-card ul li {
-  list-style: none;
-  padding: 12px 8px 12px 40px;
-  font-size: 18px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+input[type=submit]:hover {
+  background-color: #ccc;
+}
+
+input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#clock {
+  font-size: 10em;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+.username {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 /*# sourceMappingURL=index.css.map */
