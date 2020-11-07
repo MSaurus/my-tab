@@ -1,3 +1,4 @@
+import {loadTodos} from './todo.js'
 import {showTime} from './clock.js'
 import {isUsernameSet,loadUsername} from './userGreeting.js'
 
@@ -5,6 +6,7 @@ import {isUsernameSet,loadUsername} from './userGreeting.js'
 export let storage = window.localStorage;
 
 document.addEventListener("DOMContentLoaded", function() {
+  loadTodos();
   showTime();
 
   if (isUsernameSet()) {

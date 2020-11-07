@@ -1,12 +1,6 @@
-// so that we can use anywhere, will be used for pretty much everything
-let storage = window.localStorage;
+import {storage} from './main.js'
 
-
-document.addEventListener("DOMContentLoaded", function() {
-  loadTodos();
-});
-
-let loadTodos = () => {
+export let loadTodos = () => {
   let todos = []
   /* get all the items and remove the ones
   ** that are not todos
