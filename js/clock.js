@@ -1,3 +1,8 @@
+document.addEventListener("DOMContentLoaded", function() {
+  showTime();
+});
+
+
 let showTime = () => {
   let date = new Date();
   let h = date.getHours(); // 0 - 23
