@@ -1,22 +1,14 @@
-document.addEventListener("DOMContentLoaded", function() {
-  if (isUsernameSet()) {
-    loadUsername()
-  } else {
-    let usernameElement = document.querySelector(".username h1 span")
-    usernameElement.textContent = "CHANGE ME"
-    usernameForm.removeAttribute("hidden")
-  }
-});
+import {storage} from './main.js'
 
 let usernameForm = document.querySelector("#usernameForm")
 
-let isUsernameSet = () => {
+export let isUsernameSet = () => {
   return storage.getItem("username") ? true : false
 }
 
 
 
-let loadUsername = () => {
+export let loadUsername = () => {
   let usernameElement = document.querySelector(".username h1 span")
   let usernameInStorage = storage.getItem("username")
   usernameElement.textContent = `${usernameInStorage}`
