@@ -1,9 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-  showTime();
-});
-
-
-let showTime = () => {
+export let showTime = () => {
   let date = new Date();
   let h = date.getHours(); // 0 - 23
   let m = date.getMinutes(); // 0 - 59
