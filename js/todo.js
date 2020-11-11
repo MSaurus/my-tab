@@ -19,9 +19,6 @@ export let loadTodos = () => {
   }
 }
 
-
-
-
 let createTodo = event => {
   // prevent reload
   event.preventDefault(); 
@@ -36,9 +33,10 @@ let createTodo = event => {
   document.getElementById("todoForm").reset();
 }
 
-let handleTodo = (toRemove) => {
-  toRemove.remove();
-  storage.removeItem(toRemove.id);
+let removeTodo = (divId) => {
+  let divToRemove = document.getElementById(divId)
+  divToRemove.remove()
+  storage.removeItem(divToRemove.id);
 }
 
 // Instead of onclick in html, add event listener to the form when submitting
@@ -68,7 +66,7 @@ let createTodoElement = (elementId, todoText) => {
   todoParagraph.setAttribute("class", "todo-text")
 
   let button = document.createElement("button");
-  button.setAttribute("onclick", "handleTodo("+elementId+")");
+  button.addEventListener('click', () => removeTodo(elementId));
 
   let buttonText = document.createTextNode("Complete");
   button.appendChild(buttonText);
