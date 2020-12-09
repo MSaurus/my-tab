@@ -10,111 +10,25 @@ body {
 }
 
 .container{
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  flex-direction: row;
-  justify-content: space-between;
-
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .left{
-  display: flex;
-  flex-direction: column-reverse;
-  margin: 15px;
+  background-color: lightcoral;
 }
 
-.left, .mid, .right{
-  width:33%;
-}
-
-// Below is used mainly for the left column
-.todo-list{
-  margin-bottom: 100px;
-
-  #todoForm{
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    margin: 15px;
-  }
-
-  .todo{
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    background-color: #575fcf;
-    border-radius: 5px;
-    width: 50%;
-    box-shadow: 5px 5px #1e272e;
-  }
-
-  .todo-title{
-    text-shadow: 4px 4px #1e272e;
-  }
-
-  .todo-text{
-    margin-left: 15px;
-  }
-  
-}
-
-button{
-  background-color: white;
-  color: black;
-  padding: 13px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-
-  &:hover{
-    background-color: #ccc;
-  }
-}
-  
-input[type=submit] {
-  background-color: white;
-  color: black;
-  padding: 13px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-
-  &:hover{
-    background-color: #ccc;
-  }  
-}
-
-input[type=text]{
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-// Below is used mainly for the mid column
 .mid{
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-  
-#clock{
-  font-size: 10em;
-  font-weight: bold;
+  background-color: green;
 }
 
-h1{
-  font-size: 2.5em;
-}
-
-.username{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+.right{
+  background-color: yellow;
 }
