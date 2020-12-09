@@ -20,6 +20,16 @@ body {
 
 .left {
   background-color: lightcoral;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.todo-list {
+  margin-bottom: 5%;
 }
 
 .mid {

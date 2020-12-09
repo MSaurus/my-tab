@@ -18,6 +18,12 @@ body {
 
 .left{
   background-color: lightcoral;
+  display: flex;
+  align-items: flex-end;
+}
+
+.todo-list{
+  margin-bottom: 5%;
 }
 
 .mid{
