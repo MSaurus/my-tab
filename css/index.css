@@ -28,8 +28,15 @@ body {
           align-items: flex-end;
 }
 
-.todo-list {
+.left .todo-list, .left #items {
   margin-bottom: 5%;
+}
+
+.left #item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (minmax(200px, 1fr))[auto-fill];
+      grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .mid {

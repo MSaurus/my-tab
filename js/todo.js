@@ -74,7 +74,7 @@ let createTodoElement = (elementId, todoText) => {
   todo.appendChild(todoParagraph);
   todo.appendChild(button);
 
-  let list = document.getElementById("todoList");
+  let list = document.getElementById("items");
   list.appendChild(todo);
 }
 
