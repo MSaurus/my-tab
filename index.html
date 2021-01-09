@@ -6,11 +6,14 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="css/index.css">
-    <link rel
 </head>
-<body>
+<body style="background-color: #3c40c6;">
 	<div class="container">
         <section class="left">
+            <div id='change-color'>
+                <button id="change-color-btn">Change background</button>
+                <input type="color" id="color-picker" hidden>
+            </div>
             <div class="todo-list">
                 <div class="todo-list-card">
                     <h2 class="todo-title">Todo List</h2>
@@ -36,5 +39,6 @@
         </section>
 	</div>       
     <script src="./js/main.js"></script> 
+    <script type="module" src="./js/changeColor.js"></script>
 </body>
 </html>

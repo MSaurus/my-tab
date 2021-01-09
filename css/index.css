@@ -4,7 +4,6 @@ body {
   height: 100vh;
   width: 100vw;
   font-size: 16px;
-  background-color: #3c40c6;
   color: white;
   font-family: Helvetica, sans-serif;
 }
@@ -148,5 +147,10 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+#change-color {
+  position: fixed;
+  top: 1em;
 }
 /*# sourceMappingURL=index.css.map */
