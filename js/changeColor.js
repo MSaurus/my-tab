@@ -2,12 +2,7 @@ import {storage} from './main.js'
 
 let btn = document.getElementById('change-color-btn');
 
-/* Need this since the color picker wants hex 
-** to set the default value and apparently js
-** just convert hex to rgb when I put in a hex
-** value into the backgroundColor
-*/ 
-function RGBToHex(rgb) {
+let RGBToHex = rgb => {
     // Choose correct separator
     let sep = rgb.indexOf(",") > -1 ? ", " : " ";
     // Turn "rgb(r,g,b)" into [r,g,b]
@@ -40,11 +35,11 @@ export let loadBackgroundColor = () => {
 let watchColorPicker = event => {
     event.preventDefault();
     let background = document.querySelector('body');
-    let newBackgroundColor = event.target.value
+    let newBackgroundColor = event.target.value;
     background.style.backgroundColor = newBackgroundColor;
 }
 
-// Only updates the storage when the user confirms color change
+// Only updates the storage when the user confirms the color change
 let updateStorage = event => {
     event.preventDefault();
     storage.setItem("backgroundColor", event.target.value)
