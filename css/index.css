@@ -4,8 +4,6 @@ body {
   height: 100vh;
   width: 100vw;
   font-size: 16px;
-  background-color: #3c40c6;
-  color: white;
   font-family: Helvetica, sans-serif;
 }
 
@@ -19,7 +17,6 @@ body {
 }
 
 .left {
-  background-color: lightcoral;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,11 +29,65 @@ body {
   margin-bottom: 5%;
 }
 
+.left .todo {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.left .todo-text {
+  margin: 16px;
+  padding-top: 16px;
+}
+
+.left .action {
+  border: none;
+  background-color: white;
+  color: #0277BD;
+  margin: 0 0 16px 16px;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+.left .action:hover {
+  border: none;
+  background-color: white;
+  color: #0288D1;
+  margin: 0 0 16px 16px;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+}
+
 .left #item {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: (minmax(200px, 1fr))[auto-fill];
       grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.left .btn {
+  border-style: none;
+  border-radius: 5px;
+  padding: 16px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background-color: #0277BD;
+  color: white;
+}
+
+.left .btn:hover {
+  cursor: pointer;
+  background-color: #0288D1;
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25), 0 3px 5px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25), 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+.left .btn:focus {
+  outline: none;
 }
 
 .mid {
@@ -54,10 +105,22 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: green;
 }
 
-.right {
-  background-color: yellow;
+.mid #clock {
+  font-size: 12vw;
+}
+
+input[type=text] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px solid grey;
+  padding: 14px;
+  border-radius: 5px;
+}
+
+input[type=text]:focus {
+  outline: none !important;
+  border: 2px solid #0277BD;
 }
 /*# sourceMappingURL=index.css.map */

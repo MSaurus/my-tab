@@ -70,6 +70,7 @@ let createTodoElement = (elementId, todoText) => {
 
   let buttonText = document.createTextNode("Complete");
   button.appendChild(buttonText);
+  button.setAttribute("class", "action")
 
   todo.appendChild(todoParagraph);
   todo.appendChild(button);
