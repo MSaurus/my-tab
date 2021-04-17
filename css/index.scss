@@ -86,6 +86,21 @@ body {
   justify-content: center;
   align-items: center;
 
+  .upper-mid{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .lower-mid{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+
   #clock{
     font-size: 12vw;
   }
