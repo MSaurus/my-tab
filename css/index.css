@@ -48,6 +48,7 @@ body {
   padding: 0;
   outline: none;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .left .action:hover {
