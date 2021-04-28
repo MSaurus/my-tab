@@ -1,3 +1,8 @@
+* {
+  background-color: #f6e1bb;
+  color: #3d2d42;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -42,8 +47,8 @@ body {
 
 .left .action {
   border: none;
-  background-color: white;
-  color: #0277BD;
+  background-color: #f6e1bb;
+  color: #3d2d42;
   margin: 0 0 16px 16px;
   padding: 0;
   outline: none;
@@ -53,8 +58,7 @@ body {
 
 .left .action:hover {
   border: none;
-  background-color: white;
-  color: #0288D1;
+  color: #645768;
   margin: 0 0 16px 16px;
   padding: 0;
   outline: none;
@@ -76,13 +80,13 @@ body {
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.5);
   -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  background-color: #0277BD;
-  color: white;
+  background-color: #3d2d42;
+  color: #f6e1bb;
 }
 
 .left .btn:hover {
   cursor: pointer;
-  background-color: #0288D1;
+  background-color: #645768;
   -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25), 0 3px 5px rgba(0, 0, 0, 0.22);
           box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25), 0 3px 5px rgba(0, 0, 0, 0.22);
 }
@@ -154,6 +158,6 @@ input[type=text] {
 
 input[type=text]:focus {
   outline: none !important;
-  border: 2px solid #0277BD;
+  border: 2px solid #3d2d42;
 }
 /*# sourceMappingURL=index.css.map */
