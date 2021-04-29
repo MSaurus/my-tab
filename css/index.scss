@@ -23,18 +23,36 @@ body {
   display: flex;
   align-items: flex-end;
 
+
+  #todoForm{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #todoText{
+    width: auto;
+    margin-bottom: 5px;
+  }
+
   .todo-list, #items {
     margin-bottom: 5%;
+    width: 100%;
   }
 
   .todo{
     box-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.5);
     border-radius: 5px;
+    width: 50%;
+    position: relative;
+    z-index: 1;
   }
 
   .todo-text{
     margin: 16px;
     padding-top: 16px;
+    word-break: break-all; 
   }
 
   .action{
@@ -46,16 +64,18 @@ body {
     outline: none;
     cursor: pointer;
     font-weight: bold;
+
+    &:hover{
+      border: none;
+      color: #645768;
+      margin: 0 0 16px 16px;
+      padding: 0;
+      outline: none;
+      cursor: pointer;
+    }
   }
 
-  .action:hover{
-    border: none;
-    color: #645768;
-    margin: 0 0 16px 16px;
-    padding: 0;
-    outline: none;
-    cursor: pointer;
-  }
+  
 
   #item{
    display: grid;
@@ -127,5 +147,3 @@ input[type=text]:focus{
   border: 2px solid #3d2d42;
 }
 
-.right{
-}

@@ -30,19 +30,43 @@ body {
           align-items: flex-end;
 }
 
+.left #todoForm {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.left #todoText {
+  width: auto;
+  margin-bottom: 5px;
+}
+
 .left .todo-list, .left #items {
   margin-bottom: 5%;
+  width: 100%;
 }
 
 .left .todo {
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.5);
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
+  width: 50%;
+  position: relative;
+  z-index: 1;
 }
 
 .left .todo-text {
   margin: 16px;
   padding-top: 16px;
+  word-break: break-all;
 }
 
 .left .action {
