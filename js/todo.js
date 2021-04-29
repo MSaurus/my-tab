@@ -26,8 +26,12 @@ let createTodo = event => {
   // creates a unique id that will be used later to remove the elemnt when the todo is done
   let elementId = id();
   let todoText = document.getElementById("todoText").value;
-  createTodoElement(elementId, todoText);
-  storage.setItem(elementId, todoText);
+  if(todoText === ""){
+    
+  }else{
+    createTodoElement(elementId, todoText);
+    storage.setItem(elementId, todoText);
+  }
   
   // reset form (empty the input text)
   document.getElementById("todoForm").reset();
