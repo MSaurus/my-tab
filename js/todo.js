@@ -29,17 +29,7 @@ let createTodo = event => {
   let errorMsg = document.getElementById("todoErrorText");
 
   if(todoText.value === ""){
-    errorMsg.classList.remove("hidden");
-    todoText.classList.add("error")
-
-    errorMsg.classList.add("bounce");
-    todoText.classList.add("bounce")
-    setTimeout(function() {
-      //remove the class so animation can occur as many times as user triggers event, delay must be longer than the animation duration and any delay.
-      errorMsg.classList.remove("bounce");
-      todoText.classList.remove("bounce");
-    }, 1000); 
-
+   addErrorClasses(todoText, errorMsg)
   }else{
     errorMsg.classList.add("hidden")
     todoText.classList.remove("error")
@@ -50,6 +40,19 @@ let createTodo = event => {
   
   // reset form (empty the input text)
   document.getElementById("todoForm").reset();
+}
+
+let addErrorClasses = (todoText, errorMsg) => {
+  errorMsg.classList.remove("hidden");
+  todoText.classList.add("error")
+
+  errorMsg.classList.add("bounce");
+  todoText.classList.add("bounce")
+  setTimeout(function() {
+    //remove the class so animation can occur as many times as user triggers event, delay must be longer than the animation duration and any delay.
+    errorMsg.classList.remove("bounce");
+    todoText.classList.remove("bounce");
+  }, 1000); 
 }
 
 let removeTodo = (divId) => {

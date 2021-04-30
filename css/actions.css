@@ -12,14 +12,10 @@
 }
 
 .bounce {
-  outline: 0;
-  border-color: red;
   -webkit-animation-name: bounce;
           animation-name: bounce;
   -webkit-animation-duration: .5s;
           animation-duration: .5s;
-  -webkit-animation-delay: 0.25s;
-          animation-delay: 0.25s;
 }
 
 /* This approximates the ease-in-out-bounce animation from easings.net, which would require a plug-in to use*/
