@@ -26,9 +26,13 @@ let createTodo = event => {
   // creates a unique id that will be used later to remove the elemnt when the todo is done
   let elementId = id();
   let todoText = document.getElementById("todoText").value;
+
+  let errorMsg = document.getElementById("todoErrorText");
+
   if(todoText === ""){
-    
+    errorMsg.classList.remove("hidden");
   }else{
+    errorMsg.classList.add("hidden")
     createTodoElement(elementId, todoText);
     storage.setItem(elementId, todoText);
   }
