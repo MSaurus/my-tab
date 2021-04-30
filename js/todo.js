@@ -25,16 +25,27 @@ let createTodo = event => {
   
   // creates a unique id that will be used later to remove the elemnt when the todo is done
   let elementId = id();
-  let todoText = document.getElementById("todoText").value;
-
+  let todoText = document.getElementById("todoText");
   let errorMsg = document.getElementById("todoErrorText");
 
-  if(todoText === ""){
+  if(todoText.value === ""){
     errorMsg.classList.remove("hidden");
+    todoText.classList.add("error")
+
+    errorMsg.classList.add("bounce");
+    todoText.classList.add("bounce")
+    setTimeout(function() {
+      //remove the class so animation can occur as many times as user triggers event, delay must be longer than the animation duration and any delay.
+      errorMsg.classList.remove("bounce");
+      todoText.classList.remove("bounce");
+    }, 1000); 
+
   }else{
     errorMsg.classList.add("hidden")
-    createTodoElement(elementId, todoText);
-    storage.setItem(elementId, todoText);
+    todoText.classList.remove("error")
+
+    createTodoElement(elementId, todoText.value);
+    storage.setItem(elementId, todoText.value);
   }
   
   // reset form (empty the input text)
