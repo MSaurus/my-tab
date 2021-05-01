@@ -6,21 +6,24 @@ export let loadQuote = () => {
     storage.setItem("quoteIndex", 0);
   }
 
-  fetch("https://type.fit/api/quotes")
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(data) {
-    let index = parseInt(storage.getItem("quoteIndex"));
-
-    storage.setItem("quoteText", data[index].text)
-    storage.setItem("quoteAuthor", data[index].author)
-    storage.setItem("quoteIndex", index + 1)
-  });
+  if(hasOneDayPassed()){
+    fetch("https://type.fit/api/quotes")
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      let index = parseInt(storage.getItem("quoteIndex"));
+  
+      storage.setItem("quoteText", data[index].text)
+      storage.setItem("quoteAuthor", data[index].author)
+      storage.setItem("quoteIndex", index + 1)
+    });
+  }
 
   let quoteText = document.getElementById("quoteText");
   let quoteAuthor = document.getElementById("quoteAuthor");
 
+  // can write storage.quoteText but this is more obvious what is happening
   let quote = storage.getItem("quoteText")
   let author = storage.getItem("quoteAuthor")
 
@@ -31,3 +34,17 @@ export let loadQuote = () => {
 
 }
 
+let hasOneDayPassed = () =>{
+  let date = new Date().toLocaleDateString();
+  if (storage.getItem("date") === null) {
+    storage.setItem("date", date);
+  }
+
+  if(storage.getItem("date") === date){
+    return false;
+  }
+
+  storage.setItem("date", date);
+
+  return true;
+}
