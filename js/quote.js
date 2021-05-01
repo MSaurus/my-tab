@@ -11,15 +11,23 @@ export let loadQuote = () => {
     return response.json();
   })
   .then(function(data) {
-    let quoteText = document.getElementById("quoteText");
-    let quoteAuthor = document.getElementById("quoteAuthor");
     let index = parseInt(storage.getItem("quoteIndex"));
 
-    console.log(data[index]);
-    quoteText.textContent = "''" + data[index].text + "''"
-    quoteAuthor.textContent = "— " + data[index].author
+    storage.setItem("quoteText", data[index].text)
+    storage.setItem("quoteAuthor", data[index].author)
     storage.setItem("quoteIndex", index + 1)
   });
+
+  let quoteText = document.getElementById("quoteText");
+  let quoteAuthor = document.getElementById("quoteAuthor");
+
+  let quote = storage.getItem("quoteText")
+  let author = storage.getItem("quoteAuthor")
+
+  quoteText.textContent = "''" + quote + "''"
+  if (author !== "null" ){
+    quoteAuthor.textContent = "— " + author
+  }
 
 }
 
