@@ -167,7 +167,20 @@ body {
           align-items: center;
 }
 
-.mid .lower-mid .quote {
+.mid .lower-mid .upper-lower-mid {
+  height: 50%;
+}
+
+.mid .lower-mid .lower-lower-mid {
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+}
+
+.mid .lower-mid .lower-lower-mid .quote {
   margin-top: 50%;
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -183,7 +196,7 @@ body {
           align-items: center;
 }
 
-.mid .lower-mid .quote #quoteAuthor {
+.mid .lower-mid .lower-lower-mid .quote #quoteAuthor {
   margin-top: 0;
 }
 
