@@ -123,6 +123,29 @@ body {
     height: 50vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
+
+    .upper-lower-mid{
+      height: 50%;
+    }
+
+    .lower-lower-mid{
+      height: 40%;
+      display: flex;
+      align-content: flex-end;
+      
+      .quote{
+        margin-top: 50%;
+        align-self: flex-end;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+  
+        #quoteAuthor{
+          margin-top: 0;
+        }
+      }
+    }
   }
 
 
