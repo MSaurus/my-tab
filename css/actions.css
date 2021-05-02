@@ -1,0 +1,106 @@
+.error {
+  border: 2px solid red !important;
+}
+
+#todoErrorText {
+  color: red;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.bounce {
+  -webkit-animation-name: bounce;
+          animation-name: bounce;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+}
+
+/* This approximates the ease-in-out-bounce animation from easings.net, which would require a plug-in to use*/
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    timing-function: ease-in;
+  }
+  37% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+    timing-function: ease-out;
+  }
+  55% {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+    timing-function: ease-in;
+  }
+  73% {
+    -webkit-transform: translateX(4px);
+            transform: translateX(4px);
+    timing-function: ease-out;
+  }
+  82% {
+    -webkit-transform: translateX(-4px);
+            transform: translateX(-4px);
+    timing-function: ease-in;
+  }
+  91% {
+    -webkit-transform: translateX(2px);
+            transform: translateX(2px);
+    timing-function: ease-out;
+  }
+  96% {
+    -webkit-transform: translateX(-2px);
+            transform: translateX(-2px);
+    timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    timing-function: ease-in;
+  }
+}
+@keyframes bounce {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    timing-function: ease-in;
+  }
+  37% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+    timing-function: ease-out;
+  }
+  55% {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+    timing-function: ease-in;
+  }
+  73% {
+    -webkit-transform: translateX(4px);
+            transform: translateX(4px);
+    timing-function: ease-out;
+  }
+  82% {
+    -webkit-transform: translateX(-4px);
+            transform: translateX(-4px);
+    timing-function: ease-in;
+  }
+  91% {
+    -webkit-transform: translateX(2px);
+            transform: translateX(2px);
+    timing-function: ease-out;
+  }
+  96% {
+    -webkit-transform: translateX(-2px);
+            transform: translateX(-2px);
+    timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    timing-function: ease-in;
+  }
+}
+/*# sourceMappingURL=actions.css.map */
