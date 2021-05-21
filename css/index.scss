@@ -4,7 +4,7 @@ body {
   height: 100vh;
   width: 100vw;
   font-size: 16px;
-  color: white;
+  // color: white;
   font-family: Helvetica, sans-serif;
 }
 
@@ -42,15 +42,15 @@ body {
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
-    background-color: #575fcf;
+    // background-color: #575fcf;
     border-radius: 5px;
     width: 50%;
     box-shadow: 5px 5px #1e272e;
   }
 
-  .todo-title{
-    text-shadow: 4px 4px #1e272e;
-  }
+  // .todo-title{
+  //   text-shadow: 4px 4px #1e272e;
+  // }
 
   .todo-text{
     margin-left: 15px;
@@ -59,15 +59,15 @@ body {
 }
 
 button{
-  background-color: white;
-  color: black;
+  // background-color: white;
+  // color: black;
   padding: 13px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 
   &:hover{
-    background-color: #ccc;
+    // background-color: #ccc;
   }
 }
   

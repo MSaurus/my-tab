@@ -55,6 +55,8 @@ let RGBToHex = rgb => {
 
 export let loadBackgroundColor = () => {
     let backgroundColor;
+    let todo = document.querySelector(".todo");
+    let todoBtn = document.querySelector(".todo button");
     if (storage.getItem("backgroundColor") !== null) {
         backgroundColor = storage.getItem("backgroundColor");
     } else {
@@ -62,14 +64,21 @@ export let loadBackgroundColor = () => {
     }
     fixContrast(backgroundColor);
     document.body.style.backgroundColor = backgroundColor;
+    todo.style.backgroundColor = backgroundColor;
+    todoBtn.style.backgroundColor = backgroundColor;
+
 }
 
 let watchColorPicker = event => {
     event.preventDefault();
     let background = document.querySelector('body');
+    let todo = document.querySelector(".todo");
+    let todoBtn = document.querySelector(".todo button");
     let newBackgroundColor = event.target.value;
     fixContrast(event.target.value);
     background.style.backgroundColor = newBackgroundColor;
+    todo.style.background = newBackgroundColor;
+    todoBtn.style.background = newBackgroundColor;
 }
 
 // Only updates the storage when the user confirms the color change
@@ -89,6 +98,8 @@ let changeColor = event => {
 }
 
 let fixContrast = rgb => {
+    let todoBtnText = document.querySelector(".todo button");
+
     if (isHexadecimal(rgb))
     {
         rgb = hexToRGB(rgb);
@@ -99,6 +110,7 @@ let fixContrast = rgb => {
 
     let textColor = (brightness > 125) ? '#000' : '#fff';
     document.body.style.color = textColor;
+    todoBtnText.style.color = textColor;
 }
 
 btn.addEventListener('click', changeColor);
