@@ -57,6 +57,7 @@ export let loadBackgroundColor = () => {
     let backgroundColor;
     let todo = document.querySelector(".todo");
     let todoBtn = document.querySelector(".todo button");
+    let todoSubmit = document.querySelector("#todoSubmit");
     if (storage.getItem("backgroundColor") !== null) {
         backgroundColor = storage.getItem("backgroundColor");
     } else {
@@ -66,19 +67,23 @@ export let loadBackgroundColor = () => {
     document.body.style.backgroundColor = backgroundColor;
     todo.style.backgroundColor = backgroundColor;
     todoBtn.style.backgroundColor = backgroundColor;
+    todoSubmit.style.backgroundColor = backgroundColor;
 
 }
 
 let watchColorPicker = event => {
     event.preventDefault();
     let background = document.querySelector('body');
-    let todo = document.querySelector(".todo");
-    let todoBtn = document.querySelector(".todo button");
+    let todos = document.querySelectorAll(".todo");
+    let todoButtons = document.querySelectorAll(".todo button");
+    let todoSubmit = document.querySelector("#todoSubmit");
     let newBackgroundColor = event.target.value;
     fixContrast(event.target.value);
     background.style.backgroundColor = newBackgroundColor;
-    todo.style.background = newBackgroundColor;
-    todoBtn.style.background = newBackgroundColor;
+
+    todos.forEach(todo => todo.style.background = newBackgroundColor);
+    todoButtons.forEach(button => button.style.background = newBackgroundColor);
+    todoSubmit.style.background = newBackgroundColor;
 }
 
 // Only updates the storage when the user confirms the color change
@@ -98,7 +103,8 @@ let changeColor = event => {
 }
 
 let fixContrast = rgb => {
-    let todoBtnText = document.querySelector(".todo button");
+    let todoButtonsText = document.querySelectorAll(".todo button");
+    let todoSubmitText = document.querySelector("#todoSubmit");
 
     if (isHexadecimal(rgb))
     {
@@ -110,7 +116,8 @@ let fixContrast = rgb => {
 
     let textColor = (brightness > 125) ? '#000' : '#fff';
     document.body.style.color = textColor;
-    todoBtnText.style.color = textColor;
+    todoButtonsText.forEach(button => button.style.color = textColor);
+    todoSubmitText.style.color = textColor;
 }
 
 btn.addEventListener('click', changeColor);

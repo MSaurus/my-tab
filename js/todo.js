@@ -74,7 +74,16 @@ let createTodoElement = (elementId, todoText) => {
   todo.appendChild(todoParagraph);
   todo.appendChild(button);
 
+  let backgroundColor = "#3c40c6";
+  if (storage.getItem("backgroundColor") !== null) {
+    backgroundColor = storage.getItem("backgroundColor");
+  } 
+
+  todo.style.backgroundColor = backgroundColor;
+  button.style.backgroundColor = backgroundColor;
+
   let list = document.getElementById("todoList");
   list.appendChild(todo);
+
 }
 
