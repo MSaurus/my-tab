@@ -1,8 +1,8 @@
 import {storage} from './main.js'
 
-let btn = document.getElementById('change-color-btn');
+let backgroundBtn = document.getElementById('change-bg-color-btn');
 
-let rgbList = rgb => {
+export let rgbList = rgb => {
     // Choose correct separator
     let sep = rgb.indexOf(",") > -1 ? ", " : " ";
     // Turn "rgb(r,g,b)" into [r,g,b]
@@ -13,9 +13,9 @@ let rgbList = rgb => {
 let isHexadecimal = testValue => {
     let regexp =/^#[0-9A-F]{6}$/i;
     if (regexp.test(testValue)) {
-        return true
+        return true;
     } else {
-        return false
+        return false;
     }
 }
 
@@ -33,7 +33,7 @@ let hexToRGB = hex => {
         b = "0x" + hex[5] + hex[6];
     }
 
-    return [+r, +g, +b]
+    return [+r, +g, +b];
 }
 
 let RGBToHex = rgb => {
@@ -65,8 +65,10 @@ export let loadBackgroundColor = () => {
     }
     fixContrast(backgroundColor);
     document.body.style.backgroundColor = backgroundColor;
-    todo.style.backgroundColor = backgroundColor;
-    todoBtn.style.backgroundColor = backgroundColor;
+    if (todo !== null) {
+        todo.style.backgroundColor = backgroundColor;
+        todoBtn.style.backgroundColor = backgroundColor;
+    }
     todoSubmit.style.backgroundColor = backgroundColor;
 
 }
@@ -89,20 +91,20 @@ let watchColorPicker = event => {
 // Only updates the storage when the user confirms the color change
 let updateStorage = event => {
     event.preventDefault();
-    storage.setItem("backgroundColor", event.target.value)
+    storage.setItem("backgroundColor", event.target.value);
 }
 
 let changeColor = event => {
     event.preventDefault();
-    let bodyBackground = document.body.style.backgroundColor;
+    let backgroundColor = document.body.style.backgroundColor;
     let colorPicker = document.getElementById("color-picker");
-    colorPicker.value = RGBToHex(bodyBackground);
+    colorPicker.value = RGBToHex(backgroundColor);
     colorPicker.addEventListener('input', watchColorPicker);
-    colorPicker.addEventListener('change', updateStorage)
+    colorPicker.addEventListener('change', updateStorage);
     colorPicker.click();
 }
 
-let fixContrast = rgb => {
+export let fixContrast = rgb => {
     let todoButtonsText = document.querySelectorAll(".todo button");
     let todoSubmitText = document.querySelector("#todoSubmit");
 
@@ -120,4 +122,4 @@ let fixContrast = rgb => {
     todoSubmitText.style.color = textColor;
 }
 
-btn.addEventListener('click', changeColor);
+backgroundBtn.addEventListener('click', changeColor);

@@ -1,4 +1,5 @@
 import {storage} from './main.js'
+import {fixContrast, rgbList} from './changeColor.js'
 
 export let loadTodos = () => {
   let todos = []
@@ -28,6 +29,15 @@ let createTodo = event => {
   let todoText = document.getElementById("todoText").value;
   createTodoElement(elementId, todoText);
   storage.setItem(elementId, todoText);
+
+  // TODO: Rework this part
+  // makes the new todo also follow the contrast
+  let backgroundColor = document.body.style.backgroundColor;
+  backgroundColor = rgbList(backgroundColor);
+  for(let i = 0; i < 3; i++) {
+    backgroundColor[i] = parseInt(backgroundColor[i]);
+  }
+  fixContrast(backgroundColor);
   
   // reset form (empty the input text)
   document.getElementById("todoForm").reset();
