@@ -1,121 +1,153 @@
 body {
+  background-color: #f6e1bb;
+  color: #3d2d42;
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100vw;
   font-size: 16px;
-  // color: white;
   font-family: Helvetica, sans-serif;
 }
 
-.container{
+.container {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.left {
   display: flex;
-  width: 100%;
-  height: 100vh;
-  flex-direction: row;
-  justify-content: space-between;
+  align-items: flex-end;
 
-}
-
-.left{
-  display: flex;
-  flex-direction: column-reverse;
-  margin: 15px;
-}
-
-.left, .mid, .right{
-  width:33%;
-}
-
-// Below is used mainly for the left column
-.todo-list{
-  margin-bottom: 100px;
 
   #todoForm{
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    margin: 15px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #todoText{
+    width: auto;
+    margin-bottom: 5px;
+  }
+
+  .todo-list, #items {
+    margin-bottom: 5%;
+    width: 100%;
   }
 
   .todo{
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    // background-color: #575fcf;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.5);
     border-radius: 5px;
     width: 50%;
-    box-shadow: 5px 5px #1e272e;
+    position: relative;
+    z-index: 1;
   }
-
-  // .todo-title{
-  //   text-shadow: 4px 4px #1e272e;
-  // }
 
   .todo-text{
-    margin-left: 15px;
+    margin: 16px;
+    padding-top: 16px;
+    word-break: break-all; 
   }
-  
-}
+
+  .action{
+    border: none;
+    background-color: #f6e1bb;
+    color: #3d2d42;
+    margin: 0 0 16px 16px;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover{
+      border: none;
+      color: #645768;
+      margin: 0 0 16px 16px;
+      padding: 0;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+}  
 
 button{
-  // background-color: white;
-  // color: black;
   padding: 13px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-
-  // &:hover{
-  //   background-color: #ccc;
-  // }
-}
-  
-input[type=submit] {
-  // background-color: white;
-  // color: black;
-  padding: 13px 20px;
-  margin: 8px 0;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 
   &:hover{
     background-color: #ccc;
-  }  
+  }
+}
+  
+#item{
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
 }
 
-input[type=text]{
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
+.btn {
+  border-style: none;
   border-radius: 5px;
-  box-sizing: border-box;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.5);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  color: #f6e1bb;
+
+  &:hover{
+    cursor: pointer;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.25), 0 3px 5px rgba(0,0,0,0.22);
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
 
-// Below is used mainly for the mid column
-.mid{
+.mid {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-  
-#clock{
-  font-size: 10em;
-  font-weight: bold;
+
+  .upper-mid {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .lower-mid {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  #clock {
+    font-size: 12vw;
+  }
+
+  .username {
+    font-size: 1vw;
+  }
 }
 
-h1{
-  font-size: 2.5em;
+input[type=text] {
+  box-sizing: border-box;
+  border: 2px solid grey;
+  padding: 14px;
+  border-radius: 5px;
 }
 
-.username{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+input[type=text]:focus {
+  outline: none !important;
+  border: 2px solid #3d2d42;
 }
 
 #change-color {

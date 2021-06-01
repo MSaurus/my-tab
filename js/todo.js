@@ -26,21 +26,45 @@ let createTodo = event => {
   
   // creates a unique id that will be used later to remove the elemnt when the todo is done
   let elementId = id();
-  let todoText = document.getElementById("todoText").value;
-  createTodoElement(elementId, todoText);
-  storage.setItem(elementId, todoText);
+  let todoText = document.getElementById("todoText");
+  let errorMsg = document.getElementById("todoErrorText");
+  
+  if(todoText.value === ""){
+    addErrorClasses(todoText, errorMsg)
+  }else{
+    errorMsg.classList.add("hidden")
+    todoText.classList.remove("error")
+    
+    createTodoElement(elementId, todoText.value);
+    storage.setItem(elementId, todoText.value);
 
-  // TODO: Rework this part
-  // makes the new todo also follow the contrast
-  let backgroundColor = document.body.style.backgroundColor;
-  backgroundColor = rgbList(backgroundColor);
-  for(let i = 0; i < 3; i++) {
-    backgroundColor[i] = parseInt(backgroundColor[i]);
+    // TODO: Rework this part
+    // makes the new todo also follow the contrast
+    if (storage.getItem("backgroundColor") !== null) {
+      let backgroundColor = document.body.style.backgroundColor;
+      backgroundColor = rgbList(backgroundColor);
+      for(let i = 0; i < 3; i++) {
+        backgroundColor[i] = parseInt(backgroundColor[i]);
+      }
+      fixContrast(backgroundColor);
+    }
   }
-  fixContrast(backgroundColor);
   
   // reset form (empty the input text)
   document.getElementById("todoForm").reset();
+}
+
+let addErrorClasses = (todoText, errorMsg) => {
+  errorMsg.classList.remove("hidden");
+  todoText.classList.add("error")
+
+  errorMsg.classList.add("bounce");
+  todoText.classList.add("bounce")
+  setTimeout(function() {
+    //remove the class so animation can occur as many times as user triggers event, delay must be longer than the animation duration and any delay.
+    errorMsg.classList.remove("bounce");
+    todoText.classList.remove("bounce");
+  }, 1000); 
 }
 
 let removeTodo = (divId) => {
@@ -80,11 +104,12 @@ let createTodoElement = (elementId, todoText) => {
 
   let buttonText = document.createTextNode("Complete");
   button.appendChild(buttonText);
+  button.setAttribute("class", "action")
 
   todo.appendChild(todoParagraph);
   todo.appendChild(button);
 
-  let backgroundColor = "#3c40c6";
+  let backgroundColor = "";
   if (storage.getItem("backgroundColor") !== null) {
     backgroundColor = storage.getItem("backgroundColor");
   } 
@@ -92,8 +117,6 @@ let createTodoElement = (elementId, todoText) => {
   todo.style.backgroundColor = backgroundColor;
   button.style.backgroundColor = backgroundColor;
 
-  let list = document.getElementById("todoList");
+  let list = document.getElementById("items");
   list.appendChild(todo);
-
 }
-

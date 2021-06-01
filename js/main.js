@@ -19,3 +19,6 @@ document.addEventListener("DOMContentLoaded", function() {
     usernameForm.removeAttribute("hidden")
   }
 });
+
+let errorMsg = document.getElementById("todoErrorText");
+errorMsg.classList.add("hidden");

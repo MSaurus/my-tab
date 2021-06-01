@@ -54,34 +54,35 @@ let RGBToHex = rgb => {
 }
 
 export let loadBackgroundColor = () => {
-    let backgroundColor;
-    let todo = document.querySelector(".todo");
-    let todoBtn = document.querySelector(".todo button");
-    let todoSubmit = document.querySelector("#todoSubmit");
     if (storage.getItem("backgroundColor") !== null) {
+        let backgroundColor;
+        // let container = document.querySelector(".container")
+        let todo = document.querySelector(".todo");
+        let todoBtn = document.querySelector(".todo button");
+        let todoSubmit = document.querySelector("#todoSubmit");
         backgroundColor = storage.getItem("backgroundColor");
-    } else {
-        backgroundColor = "#3c40c6";
+        fixContrast(backgroundColor);
+        document.body.style.backgroundColor = backgroundColor;
+        // container.style.backgroundColor = backgroundColor;
+        if (todo !== null) {
+            todo.style.backgroundColor = backgroundColor;
+            todoBtn.style.backgroundColor = backgroundColor;
+        }
+        todoSubmit.style.backgroundColor = backgroundColor;
     }
-    fixContrast(backgroundColor);
-    document.body.style.backgroundColor = backgroundColor;
-    if (todo !== null) {
-        todo.style.backgroundColor = backgroundColor;
-        todoBtn.style.backgroundColor = backgroundColor;
-    }
-    todoSubmit.style.backgroundColor = backgroundColor;
-
 }
 
 let watchColorPicker = event => {
     event.preventDefault();
-    let background = document.querySelector('body');
+    let background = document.querySelector("body");
+    let container = document.querySelector(".container");
     let todos = document.querySelectorAll(".todo");
     let todoButtons = document.querySelectorAll(".todo button");
     let todoSubmit = document.querySelector("#todoSubmit");
     let newBackgroundColor = event.target.value;
     fixContrast(event.target.value);
     background.style.backgroundColor = newBackgroundColor;
+    // container.style.backgroundColor = newBackgroundColor;
 
     todos.forEach(todo => todo.style.background = newBackgroundColor);
     todoButtons.forEach(button => button.style.background = newBackgroundColor);

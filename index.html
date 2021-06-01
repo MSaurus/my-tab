@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>New-tab</title>
 
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/actions.css">
 </head>
 <body>
 	<div class="container">
@@ -13,20 +14,25 @@
             <div class="todo-list">
                 <div class="todo-list-card">
                     <h2 class="todo-title">Todo List</h2>
+                    <div id="items"></div>
+                    <p id="todoErrorText">Can't create an empty todo!</p>
                     <form id="todoForm">
-                        <input id="todoText" type="text" placeholder="Feed the dog">
-                        <input id="todoSubmit" type="submit" value="Create new TODO">
+                        <input autocomplete="off" id="todoText" type="text" placeholder="Feed the dog">
+                        <input id="todoSubmit" class="btn" type="submit" value="Create new TODO">
                     </form>
-                    <div id="todoList"></div>
                 </div>
             </div>
         </section>
         <section class="mid">
-            <div id="clock"></div>
-            <div class="username">
-                <h1>Hello <span>User</span></h1>
+            <div class="upper-mid">
+                <div id="clock"></div>
+                <div class="username">
+                    <h1>Hello <span>User</span></h1>
+                </div>
+            </div>
+            <div class="lower-mid">             
                 <form id="usernameForm" hidden>
-                    <input id="newUsername" type="text" placeholder="Enter your username here">
+                    <input autocomplete="off" id="newUsername" type="text" placeholder="Enter your username here">
                 </form>
             </div>
         </section>
