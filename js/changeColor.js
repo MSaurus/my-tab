@@ -56,37 +56,37 @@ let RGBToHex = rgb => {
 export let loadBackgroundColor = () => {
     if (storage.getItem("backgroundColor") !== null) {
         let backgroundColor;
-        // let container = document.querySelector(".container")
         let todo = document.querySelector(".todo");
         let todoBtn = document.querySelector(".todo button");
         let todoSubmit = document.querySelector("#todoSubmit");
+        let changeColorBtn = document.querySelector("#change-bg-color-btn")
         backgroundColor = storage.getItem("backgroundColor");
         fixContrast(backgroundColor);
         document.body.style.backgroundColor = backgroundColor;
-        // container.style.backgroundColor = backgroundColor;
         if (todo !== null) {
             todo.style.backgroundColor = backgroundColor;
             todoBtn.style.backgroundColor = backgroundColor;
         }
-        todoSubmit.style.backgroundColor = backgroundColor;
+        todoSubmit.style.color = backgroundColor;
+        changeColorBtn.style.color = backgroundColor;
     }
 }
 
 let watchColorPicker = event => {
     event.preventDefault();
     let background = document.querySelector("body");
-    let container = document.querySelector(".container");
     let todos = document.querySelectorAll(".todo");
     let todoButtons = document.querySelectorAll(".todo button");
     let todoSubmit = document.querySelector("#todoSubmit");
+    let changeColorBtn = document.querySelector("#change-bg-color-btn");
     let newBackgroundColor = event.target.value;
     fixContrast(event.target.value);
     background.style.backgroundColor = newBackgroundColor;
-    // container.style.backgroundColor = newBackgroundColor;
 
     todos.forEach(todo => todo.style.background = newBackgroundColor);
     todoButtons.forEach(button => button.style.background = newBackgroundColor);
-    todoSubmit.style.background = newBackgroundColor;
+    todoSubmit.style.color = newBackgroundColor;
+    changeColorBtn.style.color = newBackgroundColor;
 }
 
 // Only updates the storage when the user confirms the color change
@@ -108,6 +108,7 @@ let changeColor = event => {
 export let fixContrast = rgb => {
     let todoButtonsText = document.querySelectorAll(".todo button");
     let todoSubmitText = document.querySelector("#todoSubmit");
+    let changeColorBtn = document.querySelector("#change-bg-color-btn");
 
     if (isHexadecimal(rgb))
     {
@@ -120,7 +121,8 @@ export let fixContrast = rgb => {
     let textColor = (brightness > 125) ? '#000' : '#fff';
     document.body.style.color = textColor;
     todoButtonsText.forEach(button => button.style.color = textColor);
-    todoSubmitText.style.color = textColor;
+    todoSubmitText.style.backgroundColor = textColor;
+    changeColorBtn.style.backgroundColor = textColor;
 }
 
 backgroundBtn.addEventListener('click', changeColor);

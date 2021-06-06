@@ -112,6 +112,7 @@ button:hover {
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.5);
   -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background-color: #3d2d42;
   color: #f6e1bb;
 }
 
@@ -196,5 +197,10 @@ input[type=text]:focus {
   bottom: 0;
   right: 0;
   margin: 15px;
+}
+
+#change-color button {
+  background-color: #3d2d42;
+  color: #f6e1bb;
 }
 /*# sourceMappingURL=index.css.map */
