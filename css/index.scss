@@ -21,14 +21,14 @@ body {
   align-items: flex-end;
 
 
-  #todoForm{
+  #todoForm {
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  #todoText{
+  #todoText {
     width: auto;
     margin-bottom: 5px;
   }
@@ -38,7 +38,7 @@ body {
     width: 100%;
   }
 
-  .todo{
+  .todo {
     box-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.5);
     border-radius: 5px;
     width: 50%;
@@ -46,13 +46,13 @@ body {
     z-index: 1;
   }
 
-  .todo-text{
+  .todo-text {
     margin: 16px;
     padding-top: 16px;
     word-break: break-all; 
   }
 
-  .action{
+  .action {
     border: none;
     background-color: #f6e1bb;
     color: #3d2d42;
@@ -62,7 +62,7 @@ body {
     cursor: pointer;
     font-weight: bold;
 
-    &:hover{
+    &:hover {
       border: none;
       color: #645768;
       margin: 0 0 16px 16px;
@@ -73,18 +73,18 @@ body {
   }
 }  
 
-button{
+button {
   padding: 13px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     background-color: #ccc;
   }
 }
   
-#item{
+#item {
   display: grid;
   grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
 }
@@ -98,7 +98,7 @@ button{
   background-color: #3d2d42;
   color: #f6e1bb;
 
-  &:hover{
+  &:hover {
     cursor: pointer;
     box-shadow: 0 2px 3px rgba(0,0,0,0.25), 0 3px 5px rgba(0,0,0,0.22);
   }

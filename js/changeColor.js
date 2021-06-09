@@ -55,12 +55,11 @@ let RGBToHex = rgb => {
 
 export let loadBackgroundColor = () => {
     if (storage.getItem("backgroundColor") !== null) {
-        let backgroundColor;
+        let backgroundColor = storage.getItem("backgroundColor");
         let todo = document.querySelector(".todo");
         let todoBtn = document.querySelector(".todo button");
         let todoSubmit = document.querySelector("#todoSubmit");
         let changeColorBtn = document.querySelector("#change-bg-color-btn")
-        backgroundColor = storage.getItem("backgroundColor");
         fixContrast(backgroundColor);
         document.body.style.backgroundColor = backgroundColor;
         if (todo !== null) {
