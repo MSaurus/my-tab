@@ -1,4 +1,5 @@
 import {storage} from './main.js'
+import {fixContrast, rgbList} from './changeColor.js'
 
 export let loadTodos = () => {
   let todos = []
@@ -27,15 +28,26 @@ let createTodo = event => {
   let elementId = id();
   let todoText = document.getElementById("todoText");
   let errorMsg = document.getElementById("todoErrorText");
-
+  
   if(todoText.value === ""){
-   addErrorClasses(todoText, errorMsg)
+    addErrorClasses(todoText, errorMsg)
   }else{
     errorMsg.classList.add("hidden")
     todoText.classList.remove("error")
-
+    
     createTodoElement(elementId, todoText.value);
     storage.setItem(elementId, todoText.value);
+
+    // TODO: Rework this part
+    // makes the new todo also follow the contrast
+    if (storage.getItem("backgroundColor") !== null) {
+      let backgroundColor = document.body.style.backgroundColor;
+      backgroundColor = rgbList(backgroundColor);
+      for(let i = 0; i < 3; i++) {
+        backgroundColor[i] = parseInt(backgroundColor[i]);
+      }
+      fixContrast(backgroundColor);
+    }
   }
   
   // reset form (empty the input text)
@@ -97,7 +109,14 @@ let createTodoElement = (elementId, todoText) => {
   todo.appendChild(todoParagraph);
   todo.appendChild(button);
 
+  let backgroundColor = "";
+  if (storage.getItem("backgroundColor") !== null) {
+    backgroundColor = storage.getItem("backgroundColor");
+  } 
+
+  todo.style.backgroundColor = backgroundColor;
+  button.style.backgroundColor = backgroundColor;
+
   let list = document.getElementById("items");
   list.appendChild(todo);
 }
-

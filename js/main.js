@@ -1,6 +1,7 @@
 import {loadTodos} from './todo.js'
 import {showTime} from './clock.js'
 import {isUsernameSet,loadUsername} from './userGreeting.js'
+import {loadBackgroundColor} from './changeColor.js'
 
 // so that we can use anywhere, will be used for pretty much everything
 export let storage = window.localStorage;
@@ -8,6 +9,7 @@ export let storage = window.localStorage;
 document.addEventListener("DOMContentLoaded", function() {
   loadTodos();
   showTime();
+  loadBackgroundColor();
 
   if (isUsernameSet()) {
     loadUsername()
