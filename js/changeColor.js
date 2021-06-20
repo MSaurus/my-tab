@@ -59,6 +59,8 @@ export let loadBackgroundColor = () => {
         let todo = document.querySelector(".todo");
         let todoBtn = document.querySelector(".todo button");
         let todoSubmit = document.querySelector("#todoSubmit");
+        let todoText = document.querySelector("#todoText");
+        let newUsername = document.querySelector("#newUsername")
         let changeColorBtn = document.querySelector("#change-bg-color-btn")
         fixContrast(backgroundColor);
         document.body.style.backgroundColor = backgroundColor;
@@ -68,6 +70,8 @@ export let loadBackgroundColor = () => {
         }
         todoSubmit.style.color = backgroundColor;
         changeColorBtn.style.color = backgroundColor;
+        todoText.style.backgroundColor = backgroundColor
+        newUsername.style.backgroundColor = backgroundColor;
     }
 }
 
@@ -77,10 +81,14 @@ let watchColorPicker = event => {
     let todos = document.querySelectorAll(".todo");
     let todoButtons = document.querySelectorAll(".todo button");
     let todoSubmit = document.querySelector("#todoSubmit");
+    let todoText = document.querySelector("#todoText");
+    let newUsername = document.querySelector("#newUsername");
     let changeColorBtn = document.querySelector("#change-bg-color-btn");
     let newBackgroundColor = event.target.value;
     fixContrast(event.target.value);
     background.style.backgroundColor = newBackgroundColor;
+    todoText.style.backgroundColor = newBackgroundColor;
+    newUsername.style.backgroundColor = newBackgroundColor;
 
     todos.forEach(todo => todo.style.background = newBackgroundColor);
     todoButtons.forEach(button => button.style.background = newBackgroundColor);
@@ -108,6 +116,8 @@ export let fixContrast = rgb => {
     let todoButtonsText = document.querySelectorAll(".todo button");
     let todoSubmitText = document.querySelector("#todoSubmit");
     let changeColorBtn = document.querySelector("#change-bg-color-btn");
+    let todoText = document.querySelector("#todoText");
+    let newUsernameText = document.querySelector("#newUsername");
 
     if (isHexadecimal(rgb))
     {
@@ -119,9 +129,13 @@ export let fixContrast = rgb => {
 
     let textColor = (brightness > 125) ? '#000' : '#fff';
     document.body.style.color = textColor;
+    todoText.style.color = textColor;
+    newUsernameText = textColor;
+
     todoButtonsText.forEach(button => button.style.color = textColor);
     todoSubmitText.style.backgroundColor = textColor;
     changeColorBtn.style.backgroundColor = textColor;
+
 }
 
 backgroundBtn.addEventListener('click', changeColor);
