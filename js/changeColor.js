@@ -1,6 +1,7 @@
 import {storage} from './main.js'
 
 let backgroundBtn = document.getElementById('change-bg-color-btn');
+let resetBtn = document.querySelector("#reset-to-default-theme");
 
 export let rgbList = rgb => {
     // Choose correct separator
@@ -60,6 +61,8 @@ export let loadBackgroundColor = () => {
         let todoBtn = document.querySelector(".todo button");
         let todoSubmit = document.querySelector("#todoSubmit");
         let changeColorBtn = document.querySelector("#change-bg-color-btn")
+        let resetBtn = document.querySelector("#reset-to-default-theme");
+
         fixContrast(backgroundColor);
         document.body.style.backgroundColor = backgroundColor;
         if (todo !== null) {
@@ -68,6 +71,7 @@ export let loadBackgroundColor = () => {
         }
         todoSubmit.style.color = backgroundColor;
         changeColorBtn.style.color = backgroundColor;
+        resetBtn.style.color = backgroundColor;
     }
 }
 
@@ -78,6 +82,7 @@ let watchColorPicker = event => {
     let todoButtons = document.querySelectorAll(".todo button");
     let todoSubmit = document.querySelector("#todoSubmit");
     let changeColorBtn = document.querySelector("#change-bg-color-btn");
+    let resetBtn = document.querySelector("#reset-to-default-theme");
     let newBackgroundColor = event.target.value;
     fixContrast(event.target.value);
     background.style.backgroundColor = newBackgroundColor;
@@ -86,6 +91,7 @@ let watchColorPicker = event => {
     todoButtons.forEach(button => button.style.background = newBackgroundColor);
     todoSubmit.style.color = newBackgroundColor;
     changeColorBtn.style.color = newBackgroundColor;
+    resetBtn.style.color = newBackgroundColor;
 }
 
 // Only updates the storage when the user confirms the color change
@@ -109,6 +115,7 @@ export let fixContrast = rgb => {
     let todoSubmitText = document.querySelector("#todoSubmit");
     let changeColorBtn = document.querySelector("#change-bg-color-btn");
     let todoText = document.querySelector("#todoText");
+    let resetBtn = document.querySelector("#reset-to-default-theme");
     let newUsernameText = document.querySelector("#newUsername");
 
     if (isHexadecimal(rgb))
@@ -122,12 +129,41 @@ export let fixContrast = rgb => {
     let textColor = (brightness > 125) ? '#000' : '#fff';
     document.body.style.color = textColor;
     todoText.style.color = textColor;
-    newUsernameText = textColor;
+    newUsernameText.style.color = textColor;
 
     todoButtonsText.forEach(button => button.style.color = textColor);
     todoSubmitText.style.backgroundColor = textColor;
     changeColorBtn.style.backgroundColor = textColor;
+    resetBtn.style.backgroundColor = textColor;
+
+}
+
+let resetToDefaultTheme = () => {
+    let background = document.querySelector("body");
+    let todos = document.querySelectorAll(".todo");
+    let todoButtons = document.querySelectorAll(".todo button");
+    let todoSubmit = document.querySelector("#todoSubmit");
+    let changeColorBtn = document.querySelector("#change-bg-color-btn");
+    let resetBtn = document.querySelector("#reset-to-default-theme");
+
+    background.style.backgroundColor = "";
+    background.style.color = "";
+
+    todos.forEach(todo => todo.style.background = "");
+    todoButtons.forEach(button => button.style.background = "");
+    todoButtons.forEach(button => button.style.color = "");
+    todoSubmit.style.backgroundColor = "";
+    todoSubmit.style.color = "";
+
+    changeColorBtn.style.backgroundColor = "";
+    changeColorBtn.style.color = "";
+
+    resetBtn.style.backgroundColor = "";
+    resetBtn.style.color = "";
+
+    storage.removeItem('backgroundColor');
 
 }
 
 backgroundBtn.addEventListener('click', changeColor);
+resetBtn.addEventListener('click', resetToDefaultTheme);
