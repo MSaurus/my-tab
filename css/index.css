@@ -42,6 +42,7 @@ body {
 }
 
 .left #todoText {
+  background-color: inherit;
   width: auto;
   margin-bottom: 5px;
 }
@@ -202,5 +203,9 @@ input[type=text]:focus {
 #change-color button {
   background-color: #3d2d42;
   color: #f6e1bb;
+}
+
+#newUsername {
+  background-color: inherit;
 }
 /*# sourceMappingURL=index.css.map */
