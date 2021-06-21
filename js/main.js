@@ -4,7 +4,7 @@ import {isUsernameSet,loadUsername} from './userGreeting.js'
 import {loadBackgroundColor} from './changeColor.js'
 
 // so that we can use anywhere, will be used for pretty much everything
-export let storage = window.localStorage;
+export let storage = browser.storage.local;
 
 document.addEventListener("DOMContentLoaded", function() {
   loadTodos();
