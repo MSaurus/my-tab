@@ -55,24 +55,30 @@ let RGBToHex = rgb => {
 }
 
 export let loadBackgroundColor = () => {
-    if (storage.getItem("backgroundColor") !== null) {
-        let backgroundColor = storage.getItem("backgroundColor");
-        let todo = document.querySelector(".todo");
-        let todoBtn = document.querySelector(".todo button");
-        let todoSubmit = document.querySelector("#todoSubmit");
-        let changeColorBtn = document.querySelector("#change-bg-color-btn")
-        let resetBtn = document.querySelector("#reset-to-default-theme");
-
-        fixContrast(backgroundColor);
-        document.body.style.backgroundColor = backgroundColor;
-        if (todo !== null) {
-            todo.style.backgroundColor = backgroundColor;
-            todoBtn.style.backgroundColor = backgroundColor;
-        }
-        todoSubmit.style.color = backgroundColor;
-        changeColorBtn.style.color = backgroundColor;
-        resetBtn.style.color = backgroundColor;
-    }
+    storage.get('backgroundColor')
+        .then((object) => {
+            return object.backgroundColor
+        })
+        .then(backgroundColor => {
+            if (backgroundColor !== undefined) {
+                let todo = document.querySelector(".todo");
+                let todoBtn = document.querySelector(".todo button");
+                let todoSubmit = document.querySelector("#todoSubmit");
+                let changeColorBtn = document.querySelector("#change-bg-color-btn")
+                let resetBtn = document.querySelector("#reset-to-default-theme");    
+    
+                fixContrast(backgroundColor);
+                document.body.style.backgroundColor = backgroundColor;
+                if (todo !== null) {
+                    todo.style.backgroundColor = backgroundColor;
+                    todoBtn.style.backgroundColor = backgroundColor;
+                }
+                todoSubmit.style.color = backgroundColor;
+                changeColorBtn.style.color = backgroundColor;
+                resetBtn.style.color = backgroundColor;
+            }
+        })
+        .catch(err => console.log(err));
 }
 
 let watchColorPicker = event => {
@@ -97,7 +103,9 @@ let watchColorPicker = event => {
 // Only updates the storage when the user confirms the color change
 let updateStorage = event => {
     event.preventDefault();
-    storage.setItem("backgroundColor", event.target.value);
+    storage.set({
+        backgroundColor: event.target.value
+    });
 }
 
 let changeColor = event => {
