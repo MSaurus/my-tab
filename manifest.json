@@ -1,0 +1,15 @@
+{
+    "description": "A simple and customizable New Tab page",
+    "manifest_version": 2,
+    "name": "NewTab",
+    "version": "1.0",
+    "homepage_url": "https://github.com/MSaurus/new-tab-page",
+    "icons": {
+      "48": "icons/border-48.png"
+    },
+
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    }
+  }
+  
