@@ -2,22 +2,21 @@ import {storage} from './main.js'
 import {fixContrast, rgbList} from './changeColor.js'
 
 export let loadTodos = () => {
-  let todos = []
-  /* get all the items and remove the ones
-  ** that are not todos
-  */ 
-  for(let i = 0; i < storage.length; i++) {
-    if(storage.key(i).substr(0, 1) === '_') {
-      todos.push(storage.key(i))
+
+  storage.get().then(object => {
+    let todos = [];
+    for (let i in Object.keys(object)) {
+      if(Object.keys(object)[i].substr(0, 1) === '_') {
+        todos.push(Object.entries(object)[i]);
+      }
     }
-  }
-  
-  // load the todos and only the todos
-  for(let i = 0; i < todos.length; i++) {
-    let elementId = todos[i]
-    let todoText = storage.getItem(elementId)
-    createTodoElement(elementId, todoText)
-  }
+    
+    todos.forEach(todo => {
+      let elementId = todo[0];
+      let todoText = todo[1];
+      createTodoElement(elementId, todoText)
+    })
+  })
 }
 
 let createTodo = event => {
@@ -36,18 +35,30 @@ let createTodo = event => {
     todoText.classList.remove("error")
     
     createTodoElement(elementId, todoText.value);
-    storage.setItem(elementId, todoText.value);
+    storage.set({
+      [elementId]: todoText.value
+    });
 
     // TODO: Rework this part
     // makes the new todo also follow the contrast
-    if (storage.getItem("backgroundColor") !== null) {
-      let backgroundColor = document.body.style.backgroundColor;
-      backgroundColor = rgbList(backgroundColor);
-      for(let i = 0; i < 3; i++) {
-        backgroundColor[i] = parseInt(backgroundColor[i]);
+    storage.get("backgroundColor", object => {
+      if (object.backgroundColor !== null) {
+        let backgroundColor = document.body.style.backgroundColor;
+        backgroundColor = rgbList(backgroundColor);
+        for (let i = 0; i < 3; i++) {
+          backgroundColor[i] = parseInt(backgroundColor[i]);
+        }
+        fixContrast(backgroundColor);
       }
-      fixContrast(backgroundColor);
-    }
+    })
+    // if (storage.getItem("backgroundColor") !== null) {
+    //   let backgroundColor = document.body.style.backgroundColor;
+    //   backgroundColor = rgbList(backgroundColor);
+    //   for(let i = 0; i < 3; i++) {
+    //     backgroundColor[i] = parseInt(backgroundColor[i]);
+    //   }
+    //   fixContrast(backgroundColor);
+    // }
   }
   
   // reset form (empty the input text)
@@ -70,7 +81,7 @@ let addErrorClasses = (todoText, errorMsg) => {
 let removeTodo = (divId) => {
   let divToRemove = document.getElementById(divId)
   divToRemove.remove()
-  storage.removeItem(divToRemove.id);
+  storage.remove(divToRemove.id);
 }
 
 // Instead of onclick in html, add event listener to the form when submitting
@@ -88,7 +99,6 @@ let id = () => {
   then creates a button that will call the function with the id wen clicked
 */
 let createTodoElement = (elementId, todoText) => {
-
   let todo = document.createElement("div");
   todo.setAttribute("id", elementId);
   todo.setAttribute("class", "todo")
@@ -110,12 +120,13 @@ let createTodoElement = (elementId, todoText) => {
   todo.appendChild(button);
 
   let backgroundColor = "";
-  if (storage.getItem("backgroundColor") !== null) {
-    backgroundColor = storage.getItem("backgroundColor");
-  } 
-
-  todo.style.backgroundColor = backgroundColor;
-  button.style.backgroundColor = backgroundColor;
+  storage.get("backgroundColor", object => {
+    if(object.backgroundColor !== null) {
+      backgroundColor = object.backgroundColor;
+      todo.style.backgroundColor = backgroundColor;
+      button.style.backgroundColor = backgroundColor;
+    }
+  })
 
   let list = document.getElementById("items");
   list.appendChild(todo);
