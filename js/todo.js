@@ -5,12 +5,18 @@ export let loadTodos = () => {
 
   storage.get().then(object => {
     let todos = [];
+
+    /* get all the items and remove the ones
+    ** storage.get().then(object => {
+    ** that are not todos
+    */
     for (let i in Object.keys(object)) {
       if(Object.keys(object)[i].substr(0, 1) === '_') {
         todos.push(Object.entries(object)[i]);
       }
     }
     
+    // load the todos
     todos.forEach(todo => {
       let elementId = todo[0];
       let todoText = todo[1];
