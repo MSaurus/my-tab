@@ -78,7 +78,6 @@ export let loadBackgroundColor = () => {
                 resetBtn.style.color = backgroundColor;
             }
         })
-        .catch(err => console.log(err));
 }
 
 let watchColorPicker = event => {
