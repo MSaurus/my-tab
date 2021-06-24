@@ -7,7 +7,6 @@ export let loadTodos = () => {
     let todos = [];
 
     /* get all the items and remove the ones
-    ** storage.get().then(object => {
     ** that are not todos
     */
     for (let i in Object.keys(object)) {
