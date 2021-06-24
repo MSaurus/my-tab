@@ -2,20 +2,17 @@ import {storage} from './main.js'
 
 let usernameForm = document.querySelector("#usernameForm")
 
-export let isUsernameSet = () => {
-  let username = storage.get("username", user => {
-    return user ? true : false
-  });
-  return username
-}
-
 export let loadUsername = () => {
   let usernameElement = document.querySelector(".username h1 span")
-  storage.get("username", usernameInStorage => {
-    usernameElement.textContent = `${usernameInStorage}`;
+  storage.get("username", object => {
+    if (object.username === null) {
+      usernameElement.textContent = "CHANGE ME"
+      usernameForm.removeAttribute("hidden")
+    } else {
+      usernameElement.textContent = `${object.username}`;
+    }
   });
 }
-
 
 /* fires when you press enter on the input
 ** it gets the name you put in, saves it
