@@ -169,7 +169,7 @@ let resetToDefaultTheme = () => {
     resetBtn.style.backgroundColor = "";
     resetBtn.style.color = "";
 
-    storage.removeItem('backgroundColor');
+    storage.remove('backgroundColor');
 
 }
 

@@ -51,14 +51,6 @@ let createTodo = event => {
         fixContrast(backgroundColor);
       }
     })
-    // if (storage.getItem("backgroundColor") !== null) {
-    //   let backgroundColor = document.body.style.backgroundColor;
-    //   backgroundColor = rgbList(backgroundColor);
-    //   for(let i = 0; i < 3; i++) {
-    //     backgroundColor[i] = parseInt(backgroundColor[i]);
-    //   }
-    //   fixContrast(backgroundColor);
-    // }
   }
   
   // reset form (empty the input text)
