@@ -117,12 +117,10 @@ let createTodoElement = (elementId, todoText) => {
   todo.appendChild(todoParagraph);
   todo.appendChild(button);
 
-  let backgroundColor = "";
   storage.get("backgroundColor", object => {
     if(object.backgroundColor !== null) {
-      backgroundColor = object.backgroundColor;
-      todo.style.backgroundColor = backgroundColor;
-      button.style.backgroundColor = backgroundColor;
+      todo.style.backgroundColor = object.backgroundColor;
+      button.style.backgroundColor = object.backgroundColor;
     }
   })
 
