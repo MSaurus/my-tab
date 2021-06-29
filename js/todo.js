@@ -47,7 +47,7 @@ let createTodo = event => {
     // TODO: Rework this part
     // makes the new todo also follow the contrast
     storage.get("backgroundColor", object => {
-      if (object.backgroundColor !== null) {
+      if (object.backgroundColor !== undefined) {
         let backgroundColor = document.body.style.backgroundColor;
         backgroundColor = rgbList(backgroundColor);
         for (let i = 0; i < 3; i++) {
