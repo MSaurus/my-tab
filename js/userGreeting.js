@@ -6,7 +6,7 @@ export let loadUsername = () => {
   let usernameElement = document.querySelector(".username h1 span")
   storage.get("username", object => {
     if (object.username === undefined) {
-      usernameElement.textContent = "DOUBLE CLICK TO CHANGE ME"
+      usernameElement.textContent = "CHANGE ME"
       usernameForm.removeAttribute("hidden")
     } else {
       usernameElement.textContent = `${object.username}`;
