@@ -24,6 +24,57 @@ The goal to implement as many widgets as we can and make them customizable.
 
 *(These are not in a specific order)*
 
+## Getting started
+These instructions will walk you through how to get the project up and running on your machine for development and testing purposes.
+
+### Prerequisites
+These are the tools you need to build the extension
+
+- Latest version 14 of Node.js
+- Latest version of npm
+- Firefox
+
+### Installing
+ 
+Follow the instructions for your platform
+
+### Linux
+Download the repository to your computer
+
+```bash
+git clone https://github.com/MSaurus/new-tab-page.git
+cd new-tab-page
+```
+
+Installing Mozillas extension tool with npm
+
+```bash
+# Install web-ext globally
+npm install -g web-ext
+```
+
+Use Mozillas tool to start a new Firefox window and install the extensions as a temporary extensions. It then watches the files for changes and reload the extension when files been changed.
+
+```bash
+# Start the extension
+web-ext run
+```
+
+### Building
+First lint the extension to make sure it doesn't have any errors regarding the manifest.json file.
+
+```bash
+# Lint manifest.json
+web-ext lint
+```
+
+Build the extension and package it inside a zip file
+
+```bash
+# Build and package the extension
+web-ext build
+```
+
 ## Feedback
 Feedback is super important to us!!!
 The easiest way to make your feedback heard right now is to create a new issue or pull request. If you want to ask us something you can always contact either of us ( @MSaurus / @jonathan-lindqvist ).
