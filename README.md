@@ -68,7 +68,7 @@ First lint the extension to make sure it doesn't have any errors regarding the m
 web-ext lint
 ```
 
-Build the extension and package it inside a zip file
+Build the extension and package it inside a zip file. The command will put the zip file inside the `web-ext-artifacts` directory that it creates.
 
 ```bash
 # Build and package the extension
