@@ -30,7 +30,7 @@ These instructions will walk you through how to get the project up and running o
 ### Prerequisites
 These are the tools you need to build the extension
 
-- Latest version 14 of Node.js
+- Latest LTS version of Node.js (14.x.x)
 - Latest version of npm
 - Firefox
 
