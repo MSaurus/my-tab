@@ -1,13 +1,11 @@
-# new-tab-page
-The name "new-tab" **is temporary**.
+# My Tab
+## What is My Tab
+My Tab aims to be the optimal new tab extension for chrome and firefox (maybe even edge 👀). My Tab wants to give full control to the user, what widgets should be used, where they should be placed and creating their own theme. My Tab will not launch with the full package on day one, we will launch it with the most barebone features and iterative new version based on feedback from our users.
 
-## What is new-tab
-new-tab aims to be the optimal new tab extension for chrome and firefox (maybe even edge 👀). new-tab wants to give full control to the user, what widgets should be used, where they should be placed and creating their own theme. new-tab will not launch with the full package on day one, we will launch it with the most barebone features and iterative new version based on feedback from our users.
-
-New tab want to help our users in their everyday life by just making it a little bit easier.
+My Tab want to help our users in their everyday life by just making it a little bit easier.
 
 ## Why?
-New-tab was created from the frustration of not finding a new tab extension for chrome or firefox that was clean and customizable. It was either clean and minimalistic and lacking useful features like todolists, or it was cluttered with all the features that you could imagine. There was no sweet-spot.
+My Tab was created from the frustration of not finding a new tab extension for chrome or firefox that was clean and customizable. It was either clean and minimalistic and lacking useful features like todolists, or it was cluttered with all the features that you could imagine. There was no sweet-spot.
 
 ## Goal
 As mentioned previously we want to improve the everyday workflow, want an easy reminder? Create a todo and see it everytime you open a new tab. Want to have easy access to your favorite websites? Have them all collected in one place. Just want some information about the weather before you go and get lunch? Have the weather widget to see if you need to bring a jacket or not.
@@ -42,8 +40,8 @@ Follow the instructions for your platform
 Download the repository to your computer
 
 ```bash
-git clone https://github.com/MSaurus/new-tab-page.git
-cd new-tab-page
+git clone https://github.com/MSaurus/my-tab.git
+cd my-tab
 ```
 
 Installing Mozillas extension tool with npm
