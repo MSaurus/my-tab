@@ -1,7 +1,7 @@
 {
     "description": "A simple and customizable New Tab page",
     "manifest_version": 2,
-    "name": "NewTab",
+    "name": "My Tab",
     "version": "1.0",
     "homepage_url": "https://github.com/MSaurus/new-tab-page",
     "icons": {
