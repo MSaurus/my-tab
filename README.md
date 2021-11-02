@@ -73,6 +73,27 @@ Build the extension and package it inside a zip file. The command will put the z
 web-ext build
 ```
 
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+
 ## Feedback
 Feedback is super important to us!!!
 The easiest way to make your feedback heard right now is to create a new issue or pull request. If you want to ask us something you can always contact either of us ( @MSaurus / @jonathan-lindqvist ).
